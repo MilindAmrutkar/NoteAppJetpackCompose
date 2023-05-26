@@ -3,6 +3,7 @@ package com.backtocding.noteappjetpackcompose.screen
 import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -112,7 +113,7 @@ fun NoteScreen(
             })
 
             Divider(modifier = Modifier.padding(10.dp))
-            LazyColumn {
+            LazyColumn(modifier = Modifier.fillMaxHeight()) {
                 items(notes) { note ->
                     NoteRow(note = note, onNoteClicked = {
                         onRemoveNote(note)
