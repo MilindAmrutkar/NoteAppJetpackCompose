@@ -7,6 +7,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.backtocding.noteappjetpackcompose.data.NotesDataSource
 import com.backtocding.noteappjetpackcompose.screen.NoteScreen
 import com.backtocding.noteappjetpackcompose.ui.theme.NoteAppJetpackComposeTheme
 
@@ -19,7 +20,10 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    NoteScreen(notes = emptyList(), onAddNote = {}, onRemoveNote = {})
+                    NoteScreen(
+                        notes = NotesDataSource().loadNotes(),
+                        onAddNote = {},
+                        onRemoveNote = {})
                 }
             }
         }
