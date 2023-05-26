@@ -10,7 +10,6 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.input.ImeAction
 
@@ -32,7 +31,7 @@ fun NoteInputText(
         value = text,
         onValueChange = onTextChange,
         maxLines = maxLine,
-        colors = TextFieldDefaults.colors(Color.Transparent),
+        colors = TextFieldDefaults.colors(),
         label = {
             Text(text = label)
         },

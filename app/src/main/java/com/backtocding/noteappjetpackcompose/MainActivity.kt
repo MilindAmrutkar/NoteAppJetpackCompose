@@ -6,8 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
-import com.backtocding.noteappjetpackcompose.data.NotesDataSource
+import com.backtocding.noteappjetpackcompose.model.Note
 import com.backtocding.noteappjetpackcompose.screen.NoteScreen
 import com.backtocding.noteappjetpackcompose.ui.theme.NoteAppJetpackComposeTheme
 
@@ -20,10 +22,17 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    val notes = remember {
+                        mutableStateListOf<Note>()
+                    }
                     NoteScreen(
-                        notes = NotesDataSource().loadNotes(),
-                        onAddNote = {},
-                        onRemoveNote = {})
+                        notes = notes,
+                        onAddNote = {
+                            notes.add(it)
+                        },
+                        onRemoveNote = {
+                            notes.remove(it)
+                        })
                 }
             }
         }
