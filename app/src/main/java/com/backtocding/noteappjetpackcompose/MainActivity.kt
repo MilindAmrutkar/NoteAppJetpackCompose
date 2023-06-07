@@ -7,8 +7,8 @@ import androidx.activity.viewModels
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.backtocding.noteappjetpackcompose.screen.NoteScreen
 import com.backtocding.noteappjetpackcompose.screen.NoteViewModel
 import com.backtocding.noteappjetpackcompose.ui.theme.NoteAppJetpackComposeTheme
@@ -28,6 +28,7 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     color = MaterialTheme.colorScheme.background
                 ) {
+//                    val noteViewModel = viewModel<NoteViewModel>() // also works
                     val noteViewModel: NoteViewModel by viewModels()
                     NotesApp(noteViewModel)
                 }
@@ -37,8 +38,8 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun NotesApp(noteViewModel: NoteViewModel = viewModel()) {
-    val notesList = noteViewModel.getAllNotes()
+fun NotesApp(noteViewModel: NoteViewModel) {
+    val notesList = noteViewModel.noteList.collectAsState().value
     NoteScreen(
         notes = notesList,
         onAddNote = {

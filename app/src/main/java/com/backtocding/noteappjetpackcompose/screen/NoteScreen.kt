@@ -36,6 +36,7 @@ import com.backtocding.noteappjetpackcompose.components.NoteButton
 import com.backtocding.noteappjetpackcompose.components.NoteInputText
 import com.backtocding.noteappjetpackcompose.data.NotesDataSource
 import com.backtocding.noteappjetpackcompose.model.Note
+import com.backtocding.noteappjetpackcompose.util.formatDate
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -148,10 +149,10 @@ fun NoteRow(
         ) {
             Text(text = note.title, style = MaterialTheme.typography.titleSmall)
             Text(text = note.description, style = MaterialTheme.typography.bodyMedium)
-//            Text(
-//                text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, d MMM")),
-//                style = MaterialTheme.typography.labelSmall
-//            )
+            Text(
+                text = formatDate(note.entryDate.time),
+                style = MaterialTheme.typography.labelSmall
+            )
 
         }
     }
