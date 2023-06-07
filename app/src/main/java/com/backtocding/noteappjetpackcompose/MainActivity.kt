@@ -12,7 +12,13 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.backtocding.noteappjetpackcompose.screen.NoteScreen
 import com.backtocding.noteappjetpackcompose.screen.NoteViewModel
 import com.backtocding.noteappjetpackcompose.ui.theme.NoteAppJetpackComposeTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+/**
+ * @AndroidEntryPoint annotation will identify that this is a dependency container,
+ * which means we are able to get the dependencies here.
+ */
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
