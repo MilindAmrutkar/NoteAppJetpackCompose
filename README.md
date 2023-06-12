@@ -14,7 +14,7 @@
 
 ## Description
 
-NoteTaking is a simple, efficient, and user-friendly note taking app developed for Android. With a clean and intuitive user interface built with Jetpack Compose, the app leverages modern Android development tools like Room Database, ViewModel, Dagger-Hilt, and Coroutines for data handling and user interface management.
+NoteTaking is a simple, efficient, and user-friendly note taking app developed for Android. With a clean and intuitive user interface built with Jetpack Compose, the app leverages modern Android development tools like Room Database, ViewModel, Dagger-Hilt, Navigation and Coroutines for data handling and user interface management.
 
 
 ## Screenshots
@@ -44,6 +44,7 @@ NoteTaking is a simple, efficient, and user-friendly note taking app developed f
 * [Room DB](https://developer.android.com/training/data-storage/room) - Provides an abstraction layer over SQLite to allow fluent database access while harnessing the full power of SQLite.
 * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - Stores UI-related data that isn't destroyed on app rotations.
 * [Dagger-Hilt](https://dagger.dev/hilt/) - Dependency Injection Library built on top of Dagger for simplified DI.
+* [Navigation](https://developer.android.com/guide/navigation) - Navigation refers to the interactions that allow users to navigate across, into, and back out from the different pieces of content within your app. 
 * [Kotlin Coroutines](https://developer.android.com/kotlin/coroutines) - For efficient async operations and data flow management.
 
 ## Author
