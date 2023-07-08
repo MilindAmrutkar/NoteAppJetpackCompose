@@ -49,7 +49,7 @@ NoteTaking is a simple, efficient, and user-friendly note taking app developed f
 
 ## Author
 
-Milind Amrutkar - [Your GitHub](https://github.com/MilindAmrutkar)
+Milind Amrutkar - [GitHub Profile](https://github.com/MilindAmrutkar)
 
 ## Contributing
 
